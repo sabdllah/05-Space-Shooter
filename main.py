@@ -65,8 +65,10 @@ class MyGame(arcade.Window):
         self.player_list = arcade.SpriteList()
         self.player_list.append(self.player_sprite)
 
+        planet_list = ['BluePlanet','Earth','FullMoon','Hurricane']
         for i in range(PLANET_COUNT):
-            planet = Planet("images/Earth.png")
+            planet_image = random.choice(planet_list)
+            planet = Planet("images/{}.png".format(planet_image))
 
             planet.center_x = random.randrange(SCREEN_WIDTH)
             planet.center_y = random.randrange(SCREEN_HEIGHT)
