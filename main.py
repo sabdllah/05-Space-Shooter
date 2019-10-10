@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 
 
 
-PLANET_COUNT = 50
-
+PLANET_COUNT = 200
+STARTING_LOCATION = (400,100)
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 SCREEN_TITLE = "2D Game"
@@ -40,6 +40,8 @@ class MyGame(arcade.Window):
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
+        
+
         self.player_sprite_list = None
         self.planet_sprite_list = None
 
@@ -48,7 +50,10 @@ class MyGame(arcade.Window):
 
         self.set_mouse_visible(False)
 
-        arcade.set_background_color(arcade.color.DARK_BLUE)
+        arcade.set_background_color(arcade.color.BLACK)
+    
+
+        
 
 
     def setup(self):
@@ -57,16 +62,19 @@ class MyGame(arcade.Window):
         self.planet_sprite_list = arcade.SpriteList()
 
         self.score = 0
-
+        
         self.player_sprite = arcade.Sprite("images/ship.png")
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         #add sprite to sprite list
-        self.player_list = arcade.SpriteList()
-        self.player_list.append(self.player_sprite)
 
+        self.player_sprite_list.append(self.player_sprite)
+
+        planet_list  = ['BluePlanet', 'Earth', 'FullMoon', 'Hurricane', 'PurplePlanet', 'RocketWhite', 'Sun','UfoGrey', 'UfoBlue', 'WhiteShootingStar', 'YellowHalfMoon','WhiteStar']
         for i in range(PLANET_COUNT):
             planet = Planet("images/Earth.png")
+            planet_image = random.choice(planet_list)
+            planet = Planet("images/{}.png".format(planet_image))
 
             planet.center_x = random.randrange(SCREEN_WIDTH)
             planet.center_y = random.randrange(SCREEN_HEIGHT)
