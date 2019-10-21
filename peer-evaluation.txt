@@ -1,0 +1,37 @@
+Name:Trevor Hosek
+Date:10/19/19
+Project: Space Shooter
+Peer's repository: https://github.com/sabdllah/05-Space-Shooter.git
+
+
+
+What is something you learned by reviewing your peer's project?
+You are able to set the sprite lists to None when you initialize them without any problems.
+ 
+
+What is something you saw in your peer's project that you would like to apply to your own programming projects?
+They make good use of the random library, something that is lacking from my game
+ 
+
+What suggestions would you have for your peer to improve his/her code?
+Comment out your code, and try to implement some sort of win/lose state in a game such as this
+ 
+
+What could have been clearer or better commented?
+There were very few comments throughout the code, the program would have been very hard to understand for someone who was unfamilliar with the arcade library
+.
+Was there anything in the code that was confusing to you? If so, what?
+I was somewhat confused as to why he initialized the spritelists twice, once in the __init__ function of the MyGame class and once in the setup method. I would think that they would only need to be initialized during either of these methods, but not both
+Also I am confused as to why they are initialized as None in the __init__ method as opposed to arcade.SpriteList()
+ 
+
+Does the repository contain an appropriate LICENSE?
+Yes
+ 
+
+What is something he/she could add to the README.md to make it more descriptive?
+Be more clear on which python file to run
+ 
+
+Pay a compliment to your peer based on the quality of his/her code.
+Your code is clear and concise, it makes sense and follows a logical flow
